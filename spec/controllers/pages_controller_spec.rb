@@ -94,5 +94,24 @@ end
                         :content =>
                           @base_title + " | Help")
     end
+    
+    
+    
+    
+    describe "GET 'book'" do
+    it "should be successful" do
+      get 'book'
+      response.should be_success
+    end
+
+    it "should have the right title" do
+      get 'book'
+      response.should have_selector("title",
+                        :content => @base_title + " | book")
+    end
+    
+    
+    
+    
   end
 end
